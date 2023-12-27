@@ -3,9 +3,15 @@ import Bowerman from '../Bowerman';
 test('create copy', () => {
     const bowerman = new Bowerman( 'abc');
 
-    expect(bowerman.type).toBe('Bowerman');
-    expect(bowerman.name).toBe('abc');
-    expect(bowerman.attack).toBe(25);
-    expect(bowerman.defence).toBe(25);
+    const correct = {
+        type: 'Bowerman',
+        name: 'abc',
+        attack: 25,
+        defence: 25,
+        level: 1,
+        health: 100,
+    }
+
+    expect (bowerman).toEqual(correct);
 
 });

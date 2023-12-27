@@ -1,9 +1,10 @@
 export default class Character {
     constructor(name, type) {
+        const typs = ['Bowerman', 'Swordsman', 'Magician', 'Daemon', 'Undead', 'Zombie']
         if (name.length < 2 || name.length > 10) {
             throw new Error('invalid name');
         }
-        if (!['Bowerman', 'Swordsman', 'Magician', 'Daemon', 'Undead', 'Zombie'].includes(type)) {
+        if (!typs.includes(type)) {
             throw new Error('invalid type ' + type);
         }
         this.type = type;

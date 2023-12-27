@@ -3,11 +3,16 @@ import Character from '../Character';
 test('create copy', () => {
     const character = new Character( 'abc', 'Bowerman');
 
-    expect(character.type).toBe('Bowerman');
-    expect(character.name).toBe('abc');
-    expect(character.health).toBe(100);
-    expect(character.level).toBe(1);
+    const correct = {
+        type: 'Bowerman',
+        name: 'abc',
+        attack: null,
+        defence: null,
+        level: 1,
+        health: 100,
+    }
 
+    expect (character).toEqual(correct);
 
     expect(() => {
         const character = new Character( 'a', 'Bowerman');

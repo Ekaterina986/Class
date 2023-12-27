@@ -1,11 +1,17 @@
 import Swordsman from '../Swordsman';
 
 test('create copy', () => {
-    const swordsman = new Undead( 'abc');
+    const swordsman = new Swordsman( 'abc');
 
-    expect(swordsman.type).toBe('Swordsman');
-    expect(swordsman.name).toBe('abc');
-    expect(swordsman.attack).toBe(40);
-    expect(swordsman.defence).toBe(10);
+    const correct = {
+        type: 'Swordsman',
+        name: 'abc',
+        attack: 40,
+        defence: 10,
+        level: 1,
+        health: 100,
+    }
+
+    expect (swordsman).toEqual(correct);
 
 });
